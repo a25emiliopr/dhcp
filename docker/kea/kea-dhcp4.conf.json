@@ -1,7 +1,9 @@
 {
   "Dhcp4": {
     "interfaces-config": {
-      "interfaces": [ "eth0" ]
+      "interfaces": [
+        "eth0"
+      ]
     },
     "lease-database": {
       "type": "memfile",
@@ -10,7 +12,28 @@
     "valid-lifetime": 600,
     "rebind-timer": 500,
     "authoritative": true,
-    "renew-timer": 300
-    
+    "renew-timer": 300,
+    "subnet4": [
+      {
+        "subnet": "192.168.10.0/24",
+        "id": 1,
+        "pools": [
+          { "pool": "192.168.10.101-192.168.10.200", 
+            "option-data": [
+              {
+                "name": "routers",
+                "data": ""
+              }
+            ]
+          }
+        ],
+        "reservations": [
+          {
+            "hw-address": "02:42:ac:11:00:10",
+            "ip-address": "192.168.10.252"
+          }
+        ]
+      }
+    ]
   }
 }
